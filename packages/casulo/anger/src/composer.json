@@ -1,0 +1,12 @@
+{
+    "name": "casulo/anger",
+    "description": "Easiest ACL generator ever",
+    "authors": [
+        {
+            "name": "Jeu Junior",
+            "email": "jeucasulo@hotmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}

@@ -1,0 +1,45 @@
+github
+…or create a new repository on the command line
+echo "# anger" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/jeucasulo/anger.git
+git push -u origin master
+…or push an existing repository from the command line
+git remote add origin https://github.com/jeucasulo/anger.git
+git push -u origin master
+…or import code from another repository
+You can initialize this repository with code from a Subversion, Mercurial, or TFS project.
+
+------------------------------------------------
+gitlab
+
+Command line instructions
+
+Git global setup
+git config --global user.name "Jeú Guimarães Conrado Junior"
+git config --global user.email "jeucasulo@hotmail.com"
+
+Create a new repository
+git clone git@gitlab.com:laravel-packages-jc/anger.git
+cd anger
+touch README.md
+git add README.md
+git commit -m "add README"
+git push -u origin master
+
+Existing folder
+cd existing_folder
+git init
+git remote add origin git@gitlab.com:laravel-packages-jc/anger.git
+git add .
+git commit -m "Initial commit"
+git push -u origin master
+
+Existing Git repository
+cd existing_repo
+git remote rename origin old-origin
+git remote add origin git@gitlab.com:laravel-packages-jc/anger.git
+git push -u origin --all
+git push -u origin --tags
