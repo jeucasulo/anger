@@ -1,3 +1,6 @@
+git remote set-url --add --push origin git@gitlab.com:laravel-packages-jc/anger.git
+git remote set-url --add --push origin https://github.com/jeucasulo/anger.git
+---------------------
 github
 …or create a new repository on the command line
 echo "# anger" >> README.md
