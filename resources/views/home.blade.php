@@ -32,8 +32,10 @@
                     @endguest
                     <hr>
                     <hr>
-                    @can('create_user', Auth::user()->name)
-                            Permitido!!!!!
+                    @can('createf_user', Auth::user()->name)
+                            <a href="" class="btn btn-success">Criar usuários</a>
+                            @else
+                            fudeu
                     @endcan
 
                     <hr>

@@ -155,6 +155,36 @@ class AngerController extends Controller
 
     public function edit()
     {
+
+        if (\Auth::check()) {
+            
+            // 
+            // 
+            // dd(\Auth::check());
+            if (\Auth::User()->can('read_user')) {
+              echo "Permitido!!!";
+            } else {
+              echo 'Negado!!!';
+            }
+
+            if (\Illuminate\Support\Facades\Gate::allows('read_user')) {
+              echo "Permitido!!!";
+            } else {
+              echo 'Negado!!!';
+            }
+
+            if ($this->authorize('read_user')) {
+              echo "Permitido!!!";
+            } else {
+              echo 'Negado!!!';
+            }
+
+
+        }else{
+            echo "Não logado, ver imigrações";
+        }
+
+
         $asset = asset('');
         return view('anger::edit', compact('asset'));
     }

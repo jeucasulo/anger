@@ -1,49 +1,48 @@
-@extends('anger::master',['jsFile'=>'js/index.js','cssFile'=>'css/index.css'])
-
-@section('title', 'Edit')
-
+@extends('layouts.app')
 
 @section('content')
-    @parent
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <div class="row">
-      <div class="col-md-8 offset-md-2">
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">Dashboard</div>
 
-        <div class="row text-center">
-          <div class="col-sm">
-              @if (Auth::check())
-              {
-                  Auth check ok
-              }@else{
-                  Auth check fail
-              }
-              @endif
+                <div class="card-body">
+                    @if (session('status'))
+                        <div class="alert alert-success">
+                            {{ session('status') }}
+                        </div>
+                    @endif
 
-              Name:
-              <hr>
-              @guest
-                  Guest
-              @else
-                  {{ Auth::user()->name }} 
-                      
-              @endguest
-              <hr>
-              <hr>
-              @can('read_user', Auth::user())
-                      FoiiiiiiiiiiiiiiiiiiiiiASDFASDF
-              @endcan
+                    You are logged in!
+                    <hr>
+                    @if (Auth::check())
+                        Auth check ok
+                    @else
+                        Auth check fail
+                    @endif
 
-              <hr>
-          </div>
+                    <hr>
+                    <hr>
+                    @guest
+                        Guest
+                    @else
+                        {{ Auth::user()->name }} 
+                            
+                    @endguest
+                    <hr>
+                    <hr>
+                    @can('createf_user', Auth::user()->name)
+                            <a href="" class="btn btn-success">Criar usuários</a>
+                            @else
+                            fudeu
+                    @endcan
+
+                    <hr>
+
+                </div>
+            </div>
         </div>
-
-      </div>
     </div>
-
-
+</div>
 @endsection
-

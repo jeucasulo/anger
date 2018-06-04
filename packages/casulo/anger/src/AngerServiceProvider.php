@@ -15,6 +15,19 @@ class AngerServiceProvider extends ServiceProvider
     {
         include __DIR__.'/routes.php';
 
+        $this->loadViewsFrom(__DIR__.'/views', 'anger');
+        $this->loadMigrationsFrom(__DIR__.'/migrations');
+
+
+        // from -> to, de: para:
+        $this->publishes([
+            __DIR__.'/views' => base_path('resources/views/Anger/'),
+            __DIR__.'/assets/js' => public_path('js'),
+            __DIR__.'/assets/css' => public_path('css'),
+            // __DIR__.'/assets/ajax-loader.gif' => public_path('img/img.png'),
+            __DIR__.'/assets/bootstrap-4.0.0-dist' => public_path('bootstrap-4.0.0-dist'),
+            __DIR__.'/assets/anger-files' => public_path('anger-files'),
+        ],'anger');
     }
 
     /**
@@ -25,8 +38,6 @@ class AngerServiceProvider extends ServiceProvider
     public function register()
     {
         
-        $this->loadViewsFrom(__DIR__.'/views', 'anger');
-        $this->loadMigrationsFrom(__DIR__.'/migrations');
         $this->mergeConfigFrom(
             __DIR__.'/config/anger.php', 'anger'
         );
