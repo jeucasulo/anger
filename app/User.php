@@ -60,4 +60,17 @@ class User extends Authenticatable
 
 
 
+
+    //checks if the the user has the received role
+    public function hasRole($role){
+        
+            if($this->roles->contains('name',$role->name)){
+                return true;
+            }
+        // return false;
+    }
+
+
+
+
 }

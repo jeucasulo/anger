@@ -13,22 +13,23 @@ class AngerController extends Controller
 {
     public function index(){
         // return 'fodaci';
-        return view('anger::index');
+        return view('anger.index');
     }
     public function users()
     {
         $users = \App\User::all();
         $asset = asset('');
-        return view('anger::users', compact('asset','users'));
+        return view('anger.users', compact('asset','users'));
     }
     public function user($id)
     {
         $user = \App\User::find($id);
         $roles = \App\Role::all();
+
         // dd($roles);
         // die(var_dump($roles));
         $asset = asset('');
-        return view('anger::user', compact('asset','user','roles'));
+        return view('anger.user', compact('asset','user','roles'));
     }
     public function userRoleAttach(Request $request){
         
@@ -81,14 +82,14 @@ class AngerController extends Controller
     {
         $roles = \App\Role::all();
         $asset = asset('');
-        return view('anger::roles', compact('asset','roles'));
+        return view('anger.roles', compact('asset','roles'));
     }
     public function role($id)
     {
         $role = \App\Role::find($id);
         $permissions = \App\Permission::all();
         $asset = asset('');
-        return view('anger::role', compact('asset','role','permissions'));
+        return view('anger.role', compact('asset','role','permissions'));
     }
 
     public function rolePermissionAttach(Request $request){
@@ -148,7 +149,7 @@ class AngerController extends Controller
         $asset = asset('');
         $user = \Auth::User();
         
-        return view('anger::permissions', compact('permissions', 'asset'));
+        return view('anger.permissions', compact('permissions', 'asset'));
 
     }
 
@@ -161,31 +162,33 @@ class AngerController extends Controller
             // 
             // 
             // dd(\Auth::check());
-            if (\Auth::User()->can('read_user')) {
+            if (\Auth::User()->can('create_user')) {
               echo "Permitido!!!";
             } else {
               echo 'Negado!!!';
             }
 
-            if (\Illuminate\Support\Facades\Gate::allows('read_user')) {
+            if (\Illuminate\Support\Facades\Gate::allows('create_user')) {
               echo "Permitido!!!";
             } else {
               echo 'Negado!!!';
             }
 
-            if ($this->authorize('read_user')) {
+            if ($this->authorize('create_user')) {
               echo "Permitido!!!";
             } else {
               echo 'Negado!!!';
             }
+
+
 
 
         }else{
-            echo "Não logado, ver imigrações";
+            echo "Não logado, ver migrações";
         }
 
 
         $asset = asset('');
-        return view('anger::edit', compact('asset'));
+        return view('anger.edit', compact('asset'));
     }
 }

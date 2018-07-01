@@ -1,4 +1,9 @@
-@extends('layouts.app')
+@extends('anger.master')
+
+@section('title', 'Edit')
+@section('jsFile', asset("").'js/index.js')
+@section('cssFile', asset("").'css/index.css')
+
 
 @section('content')
 <div class="container">
@@ -33,31 +38,17 @@
                     <hr>
                     <hr>
                     @if (Auth::check())
-                        
-                        @can('create_user', Auth::user()->name)
-                                <a href="" class="btn btn-success">Criar usuários</a>
-                                @else
+                        @can('create_user', \Auth::user()->name)
+                            <a href="" class="btn btn-success">Criar usuários</a>
+                            @else
+                            fudeu
                         @endcan
-<br>
-                        @can('read_user', Auth::user()->name)
-                                <a href="" class="btn btn-success">Ver usuários</a>
-                                @else
-                                Não permitido ver usuario
-
-                        @endcan
-<br>
-                        @can('update_user', Auth::user()->name)
-                                <a href="" class="btn btn-success">Editar usuários</a>
-                                @else
-                                Não permitido editar usuario
-
-                        @endcan
-
-
-
                     @else
-                                Não logado
+                        Auth check fail
                     @endif
+                    
+                    
+
                     <hr>
 
                 </div>

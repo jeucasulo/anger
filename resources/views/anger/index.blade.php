@@ -1,6 +1,9 @@
-@extends('anger::master',['jsFile'=>'js/index.js','cssFile'=>'css/index.css'])
+@extends('anger.master')
 
 @section('title', 'Anger')
+@section('jsFile', asset("").'js/index.js')
+@section('cssFile', asset("").'css/index.css')
+
 
 
 @section('content')

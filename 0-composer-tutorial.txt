@@ -1,0 +1,4 @@
+0 - config/app array provider
+1 - php artisan vendor:publish
+2 - php artisan make:auth
+3 - php artisan migrate

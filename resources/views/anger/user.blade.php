@@ -1,7 +1,8 @@
-@extends('anger::master',['jsFile'=>$asset.'js/index.js','cssFile'=>$asset.'css/index.css'])
+@extends('anger.master')
 
 @section('title', 'User')
-
+@section('jsFile', asset("").'js/index.js')
+@section('cssFile', asset("").'css/index.css')
 
 @section('content')
     @parent

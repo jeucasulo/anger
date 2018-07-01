@@ -25,19 +25,19 @@ class HomeController extends Controller
     public function index()
     {
         // dd(\Auth::check());
-        if (\Auth::User()->can('read_user')) {
+        if (\Auth::User()->can('create_user')) {
           echo "Permitido!!!";
         } else {
           echo 'Negado!!!';
         }
 
-        if (\Illuminate\Support\Facades\Gate::allows('read_user')) {
+        if (\Illuminate\Support\Facades\Gate::allows('create_user')) {
           echo "Permitido!!!";
         } else {
           echo 'Negado!!!';
         }
 
-        if ($this->authorize('read_user')) {
+        if ($this->authorize('create_user')) {
           echo "Permitido!!!";
         } else {
           echo 'Negado!!!';
