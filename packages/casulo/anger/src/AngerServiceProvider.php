@@ -27,6 +27,7 @@ class AngerServiceProvider extends ServiceProvider
             // __DIR__.'/assets/ajax-loader.gif' => public_path('img/img.png'),
             __DIR__.'/assets/bootstrap-4.0.0-dist' => public_path('bootstrap-4.0.0-dist'),
             __DIR__.'/assets/anger-files' => public_path('anger-files'),
+            __DIR__.'/app/Traits/Anger.php' => public_path('/app/Traits/Anger.php'),
         ],'anger');
 
         // não esquecer o TRAIT!!!!!!!

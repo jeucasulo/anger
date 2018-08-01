@@ -4,19 +4,19 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Dashboard</div>
+                <div class="card-header">Tutorial</div>
 
                 <div class="card-body">
-                    <h3 class="text-muted">Instalação</h3>
-                    <p>Terminal:</p>
+                    <h3 class="text-muted"><b>Instalação</b></h3>
+                    <p><b>Terminal:</b></p>
                     <p>0 - php artisan make:auth(ou use outro sistema de autenticação)</p>
                     <p>1 - composer require casulo/anger</p>
                     <p>2 - composer dump-autoload</p>
                     <p>3 - php artisan publish --tag=anger</p>
                     <p>4 - php artisan migrate</p>
             <hr>
-                    <h3 class="text-muted">Instruções</h3>
-                    <p>Controlador:</p>
+                    <h3 class="text-muted"><b>Instruções</b></h3>
+                    <p><b>Controlador:</b></p>
                     <p>Para checar se o usuário está logado</p>
                     <p>if (\Auth::check()) {</p>
                     <p>// code</p>
@@ -48,7 +48,7 @@
                     <p>}</p>
 
             <br>
-                    <p>View:</p>
+                    <p><b>View:</b></p>
 
                     <p>&commat;    can('create_user', Auth::user()->name)</p>
                     <p>Caso o usuário tenha a permissão "create_user" este trecho será impresso na tela</p>
