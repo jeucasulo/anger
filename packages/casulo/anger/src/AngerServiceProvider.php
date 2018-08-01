@@ -28,6 +28,8 @@ class AngerServiceProvider extends ServiceProvider
             __DIR__.'/assets/bootstrap-4.0.0-dist' => public_path('bootstrap-4.0.0-dist'),
             __DIR__.'/assets/anger-files' => public_path('anger-files'),
         ],'anger');
+
+        // não esquecer o TRAIT!!!!!!!
     }
 
     /**

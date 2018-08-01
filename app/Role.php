@@ -15,7 +15,7 @@ class Role extends Model
     	return $this->belongsToMany(\App\Permission::class);  
     } 
 
-    //checks if the the user has the received role
+    //checks if the the role has the received permission
     public function hasPermission($permission){
         
             if($this->permissions->contains('name',$permission->name)){

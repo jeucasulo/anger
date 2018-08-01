@@ -9,8 +9,15 @@ use Illuminate\Support\Facades\Auth;
 
 
 
+
+
 class AngerController extends Controller
 {
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
+
     public function index(){
         // return 'fodaci';
         return view('anger.index');
@@ -147,48 +154,54 @@ class AngerController extends Controller
     public function permissions(){
         $permissions = \App\Permission::all();
         $asset = asset('');
-        $user = \Auth::User();
-        
+        // $user = \Auth::User();
         return view('anger.permissions', compact('permissions', 'asset'));
-
     }
 
 
-    public function edit()
+    public function profile()
     {
+        if (\Auth::check()) {
+        
+            $roles = \App\Role::all();
+            $permissions = \App\Permission::all();
+            $user = Auth::user();
 
+            return view('anger.profile', compact('roles','permissions'));
+        }else{
+            return view('login');
+        }
+    }
+
+    public function test(){
         if (\Auth::check()) {
             
-            // 
-            // 
-            // dd(\Auth::check());
             if (\Auth::User()->can('create_user')) {
-              echo "Permitido!!!";
+              // echo "Permitido!!!";
             } else {
-              echo 'Negado!!!';
+              // echo 'Negado!!!';
             }
 
             if (\Illuminate\Support\Facades\Gate::allows('create_user')) {
-              echo "Permitido!!!";
+              // echo "Permitido!!!";
             } else {
-              echo 'Negado!!!';
+              // echo 'Negado!!!';
             }
 
             if ($this->authorize('create_user')) {
-              echo "Permitido!!!";
+              // echo "Permitido!!!";
             } else {
-              echo 'Negado!!!';
+              // echo 'Negado!!!';
             }
-
-
-
+            return view('anger.test');
 
         }else{
             echo "Não logado, ver migrações";
         }
+    }
 
-
-        $asset = asset('');
-        return view('anger.edit', compact('asset'));
+    public function tutorial(){
+        return view('anger.tutorial');
     }
 }
+

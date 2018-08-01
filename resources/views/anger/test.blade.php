@@ -1,10 +1,4 @@
-@extends('anger.master')
-
-@section('title', 'Edit')
-@section('jsFile', asset("").'js/index.js')
-@section('cssFile', asset("").'css/index.css')
-
-
+@extends('layouts.app')
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -22,33 +16,31 @@
                     You are logged in!
                     <hr>
                     @if (Auth::check())
-                        Auth check ok
+                        Você está logado
                     @else
-                        Auth check fail
+                        Você não está logado
                     @endif
 
                     <hr>
                     <hr>
                     @guest
-                        Guest
+                        Entrou como guest
                     @else
-                        {{ Auth::user()->name }} 
-                            
+                        Entrou como {{ Auth::user()->name }} 
                     @endguest
                     <hr>
                     <hr>
                     @if (Auth::check())
-                        @can('create_user', \Auth::user()->name)
-                            <a href="" class="btn btn-success">Criar usuários</a>
-                            @else
-                            fudeu
+                        
+                        @can('create_user', Auth::user()->name)
+                                <a href="" class="btn btn-success">Criar usuários(can)</a>
+                                @else
                         @endcan
                     @else
-                        Auth check fail
+                                Não logado
                     @endif
+                    <br>
                     
-                    
-
                     <hr>
 
                 </div>
@@ -56,4 +48,8 @@
         </div>
     </div>
 </div>
+<br>
+
+
+
 @endsection

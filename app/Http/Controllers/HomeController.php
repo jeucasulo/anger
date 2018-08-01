@@ -24,27 +24,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        // dd(\Auth::check());
-        if (\Auth::User()->can('create_user')) {
-          echo "Permitido!!!";
-        } else {
-          echo 'Negado!!!';
-        }
-
-        if (\Illuminate\Support\Facades\Gate::allows('create_user')) {
-          echo "Permitido!!!";
-        } else {
-          echo 'Negado!!!';
-        }
-
-        if ($this->authorize('create_user')) {
-          echo "Permitido!!!";
-        } else {
-          echo 'Negado!!!';
-        }
-
-
-
         return view('home');
     }
 }

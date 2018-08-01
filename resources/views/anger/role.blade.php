@@ -8,6 +8,9 @@
 @section('content')
     @parent
 
+
+    
+
 <div id="" class="container">
   <div id="" class="row">
     <div id="" class="col">

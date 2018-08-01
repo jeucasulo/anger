@@ -54,7 +54,7 @@
               <div class="card-body">
                 <h5 class="card-title">Criação e edição</h5>
                 <p class="card-text">Crie e edite novos perfis e permissões a serem atribuídos aos usuários.</p>
-                <a href="{{route('anger.edit')}}" class="btn btn-primary btn-block">Editar</a>
+                <a href="{{route('anger.profile')}}" class="btn btn-primary btn-block">Editar</a>
               </div>
             </div>
           </div>
